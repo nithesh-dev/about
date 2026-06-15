@@ -26,7 +26,8 @@ const App = () => {
     const startDate = new Date('2021-06-01');
     const currentDate = new Date();
     const diffTime = currentDate - startDate;
-    const diffYears = Math.max(0, diffTime / (1000 * 60 * 60 * 24 * 365.25)).toFixed(1);
+    const yearsValue = Math.max(0, diffTime / (1000 * 60 * 60 * 24 * 365.25));
+    const diffYears = parseFloat(yearsValue.toFixed(1)).toString();
     return resumeData.profile.summary.replace('{years}', diffYears);
   };
 
