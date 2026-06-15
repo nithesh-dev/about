@@ -22,6 +22,14 @@ const App = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const getDynamicSummary = () => {
+    const startDate = new Date('2021-06-01');
+    const currentDate = new Date();
+    const diffTime = currentDate - startDate;
+    const diffYears = Math.max(0, diffTime / (1000 * 60 * 60 * 24 * 365.25)).toFixed(1);
+    return resumeData.profile.summary.replace('{years}', diffYears);
+  };
+
   const renderText = (text) => {
     if (!text) return null;
     const parts = text.split(/(\*\*.*?\*\*)/g);
@@ -78,7 +86,7 @@ const App = () => {
               Hi, I'm <span className="gradient-text">{resumeData.profile.name}</span>
             </motion.h1>
             <motion.p variants={fadeIn}>
-              {resumeData.profile.summary}
+              {getDynamicSummary()}
             </motion.p>
             <motion.div variants={fadeIn} style={{ display: 'flex', gap: '1rem' }}>
               <a href="#contact" className="btn btn-primary">
