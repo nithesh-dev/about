@@ -10,7 +10,9 @@ import {
   Terminal,
   Database,
   Cloud,
-  Code
+  Code,
+  Award,
+  GraduationCap
 } from 'lucide-react';
 
 const App = () => {
@@ -66,6 +68,8 @@ const App = () => {
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#honors">Honors & Leadership</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -125,7 +129,9 @@ const App = () => {
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                     <div>
                       <h3 style={{ marginBottom: '0.2rem' }}>{exp.role}</h3>
-                      <p style={{ color: 'var(--text-secondary)', fontWeight: '500' }}>{exp.company} | Client: {exp.client}</p>
+                      <p style={{ color: 'var(--text-secondary)', fontWeight: '500' }}>
+                        {exp.company} {exp.client ? `| Client: ${exp.client}` : ''}
+                      </p>
                     </div>
                     <span className="badge">{exp.date}</span>
                   </div>
@@ -179,7 +185,7 @@ const App = () => {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                 >
-                  {IconMap[category.iconName]}
+                  {IconMap[category.iconName] || <Code size={24} className="mb-4" style={{ color: 'var(--accent-1)' }} />}
                   <h3 style={{ marginTop: '1rem', marginBottom: '1.5rem' }}>{category.title}</h3>
                   <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                     {category.skills.map(skill => (
@@ -192,8 +198,95 @@ const App = () => {
           </div>
         </section>
 
+        {/* Honors & Leadership Section */}
+        <section id="honors" className="container">
+          <motion.h2
+            className="section-title"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            Honors & <span className="gradient-text">Leadership</span>
+          </motion.h2>
+
+          <div className="grid grid-cols-2">
+            {resumeData.honors_leadership.map((honor, idx) => (
+              <motion.div
+                key={idx}
+                className="glass-card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}
+              >
+                <div style={{
+                  background: 'rgba(139, 92, 246, 0.1)',
+                  borderRadius: '12px',
+                  padding: '0.75rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'var(--accent-2)',
+                  flexShrink: 0
+                }}>
+                  <Award size={24} />
+                </div>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', margin: 0 }}>
+                  {renderText(honor)}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* Education Section */}
+        <section id="education" className="container">
+          <motion.h2
+            className="section-title"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="gradient-text">Education</span>
+          </motion.h2>
+
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            {resumeData.education.map((edu, idx) => (
+              <motion.div
+                key={idx}
+                className="glass-card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                style={{ display: 'flex', gap: '2rem', alignItems: 'center', flexWrap: 'wrap' }}
+              >
+                <div style={{
+                  background: 'rgba(59, 130, 246, 0.1)',
+                  borderRadius: '16px',
+                  padding: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'var(--accent-1)'
+                }}>
+                  <GraduationCap size={40} />
+                </div>
+                <div style={{ flex: 1, minWidth: '250px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                    <h3 style={{ margin: 0 }}>{edu.degree}</h3>
+                    <span className="badge">{edu.date}</span>
+                  </div>
+                  <p style={{ color: 'var(--text-secondary)', fontWeight: '500', margin: 0 }}>{edu.institution}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
         {/* Contact Section */}
-        <section id="contact" className="container" style={{ paddingBottom: '8rem' }}>
+        <section id="contact" className="container" style={{ paddingTop: '10rem', paddingBottom: '8rem' }}>
           <motion.div
             className="glass-card"
             style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}

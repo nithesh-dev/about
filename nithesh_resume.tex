@@ -1,0 +1,142 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{titlesec}
+\usepackage{latexsym,amssymb,amsmath,enumitem}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\geometry{margin=1cm}
+
+\titleformat{\section}
+  {\large\bfseries\color{black}}{}{0pt}{}[\vspace{-0.1em}]
+\titlespacing*{\section}{0pt}{0.6em}{0.2em}
+
+\newcommand{\sectionline}{\vspace{-0.1em}\noindent\rule{\linewidth}{0.6pt}\vspace{-0.7em}}
+
+\titleformat{\subsection}{\normalsize\bfseries\color{black}}{}{0em}{}
+\titleformat{\subsubsection}[runin]{\bfseries}{\thesubsubsection}{1em}{}
+\renewcommand{\labelitemi}{--}
+
+\pagestyle{empty}
+
+\begin{document}
+
+%----------------------------------
+% Header
+%----------------------------------
+\begin{center}
+  \textbf{\LARGE Nithesh Velmurugan} \\[3pt]
+  Coimbatore, India \quad $\vert$ \quad \href{mailto:nitheshvelmurughan@gmail.com}{nitheshvelmurughan@gmail.com} \quad $\vert$ \quad +91 75023 97553 \\[3pt]
+  \href{https://linkedin.com/in/nithesh-velmurugan}{linkedin.com/in/nithesh-velmurugan} \quad $\vert$ \quad \href{https://nithesh-dev.github.io/about/}{Portfolio / About Me}
+\end{center}
+
+\vspace{-1em}
+
+%----------------------------------
+% Summary
+%----------------------------------
+\sectionline
+\section*{Professional Summary}
+Cloud-focused Software Engineer with 5 years of experience building and migrating workloads to public cloud platforms, designing cloud-native microservices, and integrating on-premises systems with AWS and Azure infrastructure. Hands-on experience with TypeScript/Node JS (BFF and UI layers), Terraform-based infrastructure provisioning, and serverless deployments via Google Cloud Functions — complementing a strong foundation in Java, Kotlin, Spring Boot, Kubernetes, and Helm Charts. Proven track record delivering highly available, resilient cloud services — including a production on-premises-to-AWS migration — while managing the full software lifecycle across cross-functional, globally-distributed Agile teams. Passionate about building consistent, secure, ready-to-consume cloud patterns for development teams and promoting engineering best practices across the organisation.
+
+%----------------------------------
+% Skills
+%----------------------------------
+\sectionline
+\section*{Skills}
+\textbf{Languages \& Frameworks:} Java, Kotlin, C\#/.NET Core, TypeScript, JavaScript, Node JS, Spring Boot, Spring WebFlux, Project Reactor (Mono/Flux), React JS, Entity Framework (EF), Mediator Pattern, HTML5, CSS3, Tailwind CSS \\
+\textbf{Cloud Platforms \& Services:} AWS, Azure (Azure DevOps, Azure Pipelines); cloud-native distributed service design, on-premises to cloud migration, hybrid cloud integration \\
+\textbf{Infrastructure as Code:} Terraform (Azure Blob Storage provisioning), Helm Charts, Kubernetes manifests \\
+\textbf{DevOps \& Tools:} Docker, Kubernetes, Minikube, Git, Jenkins, CI/CD Pipelines, Azure Pipelines, IIS Manager, Postman, Jira, JetBrains IntelliJ, VS Code, Visual Studio \\
+\textbf{Serverless \& Cloud Functions:} Google Cloud Functions (Dialogflow chatbot deployment) \\
+\textbf{Databases \& Caching:} MS SQL Server, PostgreSQL, MongoDB (Reactive -- ReactiveMongoRepository), Redis (Distributed Caching) \\
+\textbf{AI-Assisted Development:} GitHub Copilot, Claude Code, ChatGPT, Google Gemini, Cursor, Antigravity \\
+\textbf{Architecture \& Practices:} Microservices, Cloud-Native Design, RESTful API Design, Domain-Driven Design (DDD), Reactive \& Event-Driven Architecture, Non-Blocking I/O, Test-Driven Development (TDD), Agile/XP, Scrum, Pair Programming, JWT Authentication \& Authorisation, CI/CD Release Management \\
+
+%----------------------------------
+% Experience
+%----------------------------------
+\sectionline
+\section*{Professional Experience}
+
+\textbf{Thoughtworks}, Senior Consultant Developer \hfill \textit{Sep 2024 -- Present}\\
+\textit{Client: OEConnection (OEC) | Stack: C\#, .NET Core, .NET Framework, MSSQL Server, AWS, Azure DevOps, Entity Framework, Redis, IIS Manager}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.01em]
+  \item Led the end-to-end cloud migration of a mission-critical Order Management API, re-architecting it from legacy .NET Framework to a cloud-native .NET Core microservices architecture to enable scalable, highly-available deployment on AWS.
+  \item Architected the migration of on-premises MSSQL Stored Procedures to Entity Framework (EF) to decouple business logic from the data layer, directly enabling the infrastructure transition from Rackspace (on-premises) to AWS Cloud.
+  \item Designed and implemented a multi-layer caching strategy using In-Memory Cache and Redis with business-defined TTL policies, reducing external service dependency latency and improving API response efficiency for cloud-hosted workloads.
+  \item Delivered a 60\% application performance improvement through native SQL query optimisation, API refactoring, asynchronous programming, and parallel task execution.
+  \item Improved system throughput and reliability under high traffic by reducing database roundtrips and implementing shared HttpClient patterns to prevent socket exhaustion in the cloud-deployed service.
+  \item Accelerated feature delivery by approximately 40\% by adopting AI-assisted software development (AIFSD) using GitHub Copilot and Claude Code for code generation, refactoring, unit tests, and documentation, while maintaining quality through peer code reviews.
+  \item Managed the full software component lifecycle — from requirements and design through development, testing, release, and production support — ensuring successful cloud-ready handover under aggressive delivery timelines.
+  \item Delivered the high-volume Order Creation \& Transaction engine, managing complex distributed workflows across 30+ relational tables with high-frequency third-party RESTful API integrations.
+  \item Contributed to Agile/XP ceremonies including Dev Huddles and Sprint Planning, providing architectural insights and collaborating closely with QA and stakeholders to ship production-ready cloud services.
+\end{itemize}
+
+\textbf{Thoughtworks}, Senior Consultant Developer \hfill \textit{Jun 2022 -- Sep 2024}\\
+\textit{Client: Axis Bank (Home Loan \& Tractor Loan) | Stack: Kotlin, Java, Spring Boot, Spring WebFlux, Project Reactor, ReactJS, MongoDB (Reactive), Kubernetes, Minikube}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.01em]
+  \item Developed reactive, non-blocking RESTful APIs using Spring WebFlux and Project Reactor (Mono/Flux) for high-throughput home-loan orchestration services, improving responsiveness and scalability under high concurrency.
+  \item Built TypeScript-based UI and BFF (Backend for Frontend) layers using ReactJS and Node JS, delivering responsive client-facing features and decoupled API orchestration between the front end and backend microservices.
+  \item Implemented end-to-end reactive backend services leveraging backpressure-aware processing and ReactiveMongoRepository (MongoDB Reactive) for non-blocking, cloud-native data access patterns.
+  \item Used Minikube for local Kubernetes-based development and testing, ensuring consistent cluster-accurate validation of backend services prior to production Kubernetes deployments.
+  \item Implemented JWT-based authentication and authorisation, issuing tokens on user login and enforcing token validation on all downstream endpoints to apply security best practices across distributed services.
+  \item Led cross-functional teams to architect and deliver the SFDC Integration (A.2) and NTB-to-ETB handling features, managing the full development lifecycle through to successful production go-live.
+  \item Migrated 800+ business data fields and associated documentation from the Maximus platform to Salesforce via RESTful APIs, resolving external vendor API ambiguities to ensure data integrity.
+  \item Reduced customer drop-offs by 20\% and recovered 25\% of previously declined loan applications by conducting Root Cause Analysis (RCA) and designing the STPD handling solution.
+  \item Reduced project delivery time by approximately 2 weeks by leading a 3-day onsite stakeholder workshop in Mumbai that accelerated requirement clarification and business-technical alignment.
+  \item Acted as Subject Matter Expert (SME) for SFDC and platform-level distributed services, unblocking multiple product teams and accelerating development timelines across a large, multi-team client account.
+  \item Maintained business continuity during critical production releases by proactively resolving production issues and developing MongoDB utility scripts for rapid operational fixes.
+  \item Mentored junior engineers through pair programming and comprehensive code reviews, improving team code consistency and accelerating onboarding of new developers.
+  \item Contributed to organisational growth as a Technical Interviewer, evaluating backend and cloud engineering candidates for technical proficiency and problem-solving capabilities.
+\end{itemize}
+
+\textbf{Thoughtworks}, Consultant Developer \hfill \textit{Jun 2022 -- Sep 2024}\\
+\textit{Client: ParentPay | Stack: C\#, .NET Core, Azure, React, TypeScript, Node JS, Microsoft SQL Server, Terraform}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.01em]
+  \item Led the cloud transformation of a legacy on-premises desktop application, re-architecting it as a cloud-native web application on Azure to improve scalability, accessibility, and operational resilience.
+  \item Provisioned Azure Blob Storage infrastructure using Terraform, gaining hands-on experience with infrastructure-as-code tooling to establish consistent, repeatable cloud resource deployment patterns.
+  \item Developed TypeScript-based UI and BFF (Backend for Frontend) layers using React and Node JS, enabling decoupled API orchestration between the front end and backend cloud services.
+  \item Took primary ownership of RESTful API design and Domain Modelling (DDD) to establish a secure, robust foundation for the new cloud-native distributed architecture.
+  \item Contributed to the full-stack delivery of a high-priority feature alongside a Senior Developer, participating in architectural design decisions and cloud deployment planning.
+\end{itemize}
+
+\textbf{Thoughtworks}, Consultant Developer \hfill \textit{Jun 2022 -- Sep 2024}\\
+\textit{Client: Education Software Solutions (ESS) | Stack: C\#, .NET, Azure, Microsoft SQL Server, TypeScript, Terraform}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.01em]
+  \item Applied Terraform to provision Azure cloud infrastructure, supporting consistent and version-controlled cloud resource management across deployment environments.
+  \item Built TypeScript-based front-end components for the ESS platform, ensuring cross-browser compatibility and responsive UI delivery across device types.
+  \item Automated database migration tooling for an on-premises system deployed across 1,000+ schools, replacing manual error-prone patching workflows and significantly reducing deployment time through CI/CD pipeline integration.
+  \item Implemented an auto-update release engineering feature for background services, ensuring 12,000+ school installations remained synchronised with the latest releases without user intervention — improving availability at scale.
+  \item Received formal cross-company recognition from an external Tech Lead for the ``Force Patch/Package'' solution, acknowledged for enhancing product modularity, deployment reliability, and release governance.
+\end{itemize}
+
+\textbf{Thoughtworks}, Graduate Consultant Developer \hfill \textit{Jun 2021 -- Jun 2022}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.01em]
+  \item Implemented and deployed a Google Chat Bot using Google Dialogflow, leveraging Google Cloud Functions (serverless) as the deployment platform — gaining hands-on experience with serverless cloud function architecture and event-driven invocation patterns.
+  \item Built a full-stack user management application with a React.js front end and Java Spring Boot back end, delivering features including calendar scheduling, task tracking, and people management.
+  \item Leveraged PostgreSQL for efficient data modelling and native SQL query design; applied TDD and clean code practices to produce robust, well-tested, ship-ready software.
+  \item Collaborated closely with clients through regular feedback sessions and participated in cross-team Agile ceremonies, gaining broad distributed systems and cloud-adjacent architecture experience.
+\end{itemize}
+
+%----------------------------------
+% Education
+%----------------------------------
+\sectionline
+\section*{Education}
+\textbf{Sri Eshwar College of Engineering}, Coimbatore, India \hfill \textit{2017 -- 2021}\\
+B.E., Computer Science and Engineering
+
+%----------------------------------
+% Honors
+%----------------------------------
+\sectionline
+\section*{Honors \& Leadership}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.01em]
+  \item Received formal cross-company appreciation from an external Tech Lead for the ``Force Patch/Package'' cloud deployment solution at ESS, recognised for enhancing product modularity and release governance across 12,000+ installations.
+  \item Served as Technical Interviewer at Thoughtworks, evaluating backend and cloud engineering candidates and contributing to talent acquisition and team strength.
+  \item Led a 3-day onsite stakeholder alignment workshop in Mumbai for the Axis Bank engagement, saving an estimated 2 weeks of development time and accelerating cloud-delivery clarity.
+  \item Acted as Subject Matter Expert (SME) across multiple distributed product teams at Axis Bank, unblocking delivery timelines and conducting cross-team Knowledge Transfer sessions on platform architecture and cloud integration design.
+\end{itemize}
+
+\end{document}
